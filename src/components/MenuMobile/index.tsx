@@ -2,7 +2,7 @@ import Close from '../../assets/close.png'
 import Logo from '../../assets/logo.png'
 import Cart from '../../assets/cart.png'
 
-export const MenuMobile = ({ menu, setMenu, navLinks }) => {
+export const MenuMobile = ({ menu, setMenu, navLinks }: any) => {
     return (
         <div className="relative">
             <div
@@ -25,7 +25,7 @@ export const MenuMobile = ({ menu, setMenu, navLinks }) => {
                 </div>
 
                 <ul className="px-5">
-                    {navLinks.map((nav, index) => (
+                    {navLinks.map((nav: any, index: any) => (
                         <li key={index}>
                             <a href={nav.url}>{nav.name}</a>
                         </li>

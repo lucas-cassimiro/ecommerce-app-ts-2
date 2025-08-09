@@ -12,16 +12,16 @@ const optionsFilter = [
 
 //products: lista completa dos produtos.
 //onFilter: função que será chamada com os produtos filtrados.
-const PriceFilter = ({ products, onFilter }) => {
-    const [selectorFilter, setSelectorFilter] = useState([]) //Cria um estado chamado selectorFilter que guarda os filtros selecionados. Começa como um array vazio [] (nenhum filtro ativo no início). setSelectorFilter é a função usada para atualizar esse estado.
+const PriceFilter = ({ products, onFilter }: any) => {
+    const [selectorFilter, setSelectorFilter] = useState<any>([]) //Cria um estado chamado selectorFilter que guarda os filtros selecionados. Começa como um array vazio [] (nenhum filtro ativo no início). setSelectorFilter é a função usada para atualizar esse estado.
 
 
     //Essa função é chamada sempre que o usuário clica em um checkbox.
     //Se o id já está na lista (prev.includes(id)), ele remove o filtro.
     //Se o id já está na lista (prev.includes(id)), ele remove o filtro.
-    const toggleFilter = (id) => {
-        setSelectorFilter((prev) =>
-            prev.includes(id) ? prev.filter((f) => f !== id) : [...prev, id]
+    const toggleFilter = (id: any) => {
+        setSelectorFilter((prev: any) =>
+            prev.includes(id) ? prev.filter((f: any) => f !== id) : [...prev, id]
         )
     }
 
@@ -36,8 +36,8 @@ const PriceFilter = ({ products, onFilter }) => {
         const filtered =
             selectorFilter.length === 0
                 ? products
-                : products.filter((produto) =>
-                      selectorFilter.some((id) => {
+                : products.filter((produto: any) =>
+                      selectorFilter.some((id: any) => {
                           const filtro = optionsFilter.find((f) => f.id === id)
                           return (
                               produto.price >= (filtro?.min ?? 0) &&
